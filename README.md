@@ -1,7 +1,6 @@
 # Bootstrap
 
 Given the difficulty of getting several files on to a stock K2 I'm suggesting user place this archive a USB thumb drive and plug it into the side of the K2.
-
 It'll automatically mount at `/mnt/exUDISK`.
 
 You should be able to then run either installer:
@@ -55,6 +54,8 @@ The addition of Entware opens up a number of possibilites including:
 * Obico
 
 # Credits
+
+[@Guilouz](https://github.com/Guilouz) - standing on the shoulders of giants
 
 * Moonraker - https://github.com/Arksine/moonraker
 * Klipper - https://github.com/Klipper3d/klipper
