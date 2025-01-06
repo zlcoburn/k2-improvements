@@ -53,9 +53,16 @@ The addition of Entware opens up a number of possibilites including:
 * restoration of classic MJPG camera feeds
 * Obico
 
+# Extras
+
+## Bed Leveling
+
+Sadly, many of the K2 beds resemble a taco or valley.  In the [bed_leveling](bed_leveling) folder you will find a python based script and short writeup on how to apply aluminium tape to shim the bed.
+
 # Credits
 
 [@Guilouz](https://github.com/Guilouz) - standing on the shoulders of giants
+[@stranula](https://github.com/stranula)
 
 * Moonraker - https://github.com/Arksine/moonraker
 * Klipper - https://github.com/Klipper3d/klipper
