@@ -84,7 +84,7 @@ I am actively working on resolving this.  Obico requires a camera service/binary
 
 ## I've installed the Camera fixes but I still can't setup the webcam in Fluidd
 
-If you tried to setup the webcam before installing the fixes you've got at least one (or more) broken entries. Because these entries are broken, they can't be removed normally, but we have included a script ease their removeal.
+If you tried to setup the webcam before installing the fixes you've got at least one (or more) broken entries. Because these entries are broken, they can't be removed normally, but we have included a script ease their removal.
 
 ```
 ./scripts/delete-camera <name>
