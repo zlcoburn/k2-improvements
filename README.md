@@ -63,6 +63,7 @@ Sadly, many of the K2 beds resemble a taco or valley.  In the [bed_leveling](bed
 
 * [@Guilouz](https://github.com/Guilouz) - standing on the shoulders of giants
 * [@stranula](https://github.com/stranula)
+* [@juliosueiras](https://github.com/juliosueiras)
 
 * Moonraker - https://github.com/Arksine/moonraker
 * Klipper - https://github.com/Klipper3d/klipper
@@ -72,7 +73,7 @@ Sadly, many of the K2 beds resemble a taco or valley.  In the [bed_leveling](bed
 
 ## Fluidd / K2 Webcam
 
-The **WebRTC (Creality K2 Plus)** Stream type implemented by juliosueiras
+The **WebRTC (Creality K2 Plus)** Stream type implemented by [@juliosueiras](https://github.com/juliosueiras)
 
 # Known Issues
 
