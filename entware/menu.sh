@@ -149,13 +149,13 @@ show_menu() {
         printf "1) ${entry_name}\n"
     fi
 
-    # Option 2
-    entry_name="Classic Camera - mjpeg-streamer"
-    if is_installed "2"; then
-        printf "2) %b[INSTALLED]%b ${entry_name}\n" "$GREEN" "$NC"
-    else
-        printf "2) ${entry_name}\n"
-    fi
+#    # Option 2
+#    entry_name="Classic Camera - mjpeg-streamer"
+#    if is_installed "2"; then
+#        printf "2) %b[INSTALLED]%b ${entry_name}\n" "$GREEN" "$NC"
+#    else
+#        printf "2) ${entry_name}\n"
+#    fi
 
     # Option 3
     entry_name="Obico"
@@ -184,7 +184,13 @@ while true; do
     read choice
 
     case "$choice" in
-        1|2|3)
+        2)
+            printf "%bThis option is currently disabled.%b\n" "$YELLOW" "$NC"
+            printf "Press Enter to continue..."
+            read dummy
+            continue
+            ;;
+        1|3)
             if is_installed "$choice"; then
                 printf "%bThis option is already installed.%b\n" "$YELLOW" "$NC"
                 printf "Press Enter to continue..."
