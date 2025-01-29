@@ -165,8 +165,11 @@ install_option_5() {
     entry_name="START_PRINT"
     printf "Installing ${entry_name}...\n"
     mkdir -p /mnt/UDISK/printer_data/config/custom
+    cp features/bed_mesh/bed.cfg \
+        /mnt/UDISK/printer_data/config/custom/bed.cfg
     cp features/start_print/start_print.cfg \
         /mnt/UDISK/printer_data/config/custom/start_print.cfg
+    ./scripts/ensure_included.py custom/bed.cfg
     ./scripts/ensure_included.py custom/start_print.cfg
     printf "${entry_name} installed.\n"
 }
