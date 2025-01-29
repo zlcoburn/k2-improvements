@@ -1,3 +1,7 @@
+# Donations
+
+While donations are definitely _not required_, they are appreciated.  I you'd like to donate you can do so [here](https://ko-fi.com/jamincollins).
+
 # Bootstrap
 
 Given the difficulty of getting several files on to a stock K2 I'm suggesting user place this archive a USB thumb drive and plug it into the side of the K2.
