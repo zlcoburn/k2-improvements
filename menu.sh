@@ -114,9 +114,9 @@ install_option_1() {
     cp features/bed_screws/screws_tilt_adjust.py \
         /usr/share/klipper/klippy/extras/screws_tilt_adjust.py
     mkdir -p /mnt/UDISK/printer_data/config/custom
-    cp features/bed_screws/bed.cfg \
-        /mnt/UDISK/printer_data/config/custom/bed.cfg
-    ./scripts/ensure_included.py custom/bed.cfg
+    cp features/bed_screws/bed_screws.cfg \
+        /mnt/UDISK/printer_data/config/custom/bed_screws.cfg
+    ./scripts/ensure_included.py custom/bed_screws.cfg
     # schedule klipper restart
     add_service klipper
     printf "${entry_name} installed.\n"
@@ -165,11 +165,11 @@ install_option_5() {
     entry_name="START_PRINT"
     printf "Installing ${entry_name}...\n"
     mkdir -p /mnt/UDISK/printer_data/config/custom
-    cp features/bed_mesh/bed.cfg \
-        /mnt/UDISK/printer_data/config/custom/bed.cfg
+    cp features/bed_mesh/bed_mesh.cfg \
+        /mnt/UDISK/printer_data/config/custom/bed_mesh.cfg
     cp features/start_print/start_print.cfg \
         /mnt/UDISK/printer_data/config/custom/start_print.cfg
-    ./scripts/ensure_included.py custom/bed.cfg
+    ./scripts/ensure_included.py custom/bed_mesh.cfg
     ./scripts/ensure_included.py custom/start_print.cfg
     printf "${entry_name} installed.\n"
 }
