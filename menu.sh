@@ -124,14 +124,24 @@ install_option_1() {
 
 install_option_2() {
     entry_name="Bed Mesh - allow additional mesh sizes"
-    printf "Installing ${entry_name}...\n"
-    backup klipper
-    cp features/bed_mesh/bed_mesh.py \
-        /usr/share/klipper/klippy/extras/bed_mesh.py
-    rm -f /usr/share/klipper/klippy/extras/bed_mesh.pyc
-    # schedule klipper restart
-    add_service klipper
-    printf "${entry_name} installed.\n"
+    # gate this on firmware version
+    version=$(fw_printenv -n version)
+
+    # Split first three components
+    major_minor_patch=$(echo "$version" | cut -d'.' -f1-3)
+
+    if [ "$major_minor_patch" \>= "1.1.2" ]; then
+        printf "Not installing ${entry_name}, no longer needed ...\n"
+    else
+        printf "Installing ${entry_name}...\n"
+        backup klipper
+        cp features/bed_mesh/bed_mesh.py \
+            /usr/share/klipper/klippy/extras/bed_mesh.py
+        rm -f /usr/share/klipper/klippy/extras/bed_mesh.pyc
+        # schedule klipper restart
+        add_service klipper
+        printf "${entry_name} installed.\n"
+    fi
 }
 
 install_option_3() {
