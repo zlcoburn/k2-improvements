@@ -1,39 +1,66 @@
-# Donations
+# K2 Improvements
+
+## DISCLAIMER
+
+use at your own risk, not responsible for fires or broken dreams.  But you do get to keep both halves if something breaks.
+
+## REVAMP
+
+This is the working state of a complete revamp of the repository, almost everything will be changed.
+
+## Installers
+
+A unified installation menu is _in progress_.  For now each feature can be found under the [features](./features/) directory and an installation script `install.sh` is provided for each option.
+
+The unified installer will understand inter option dependencies and ensure they are met.
+
+## Bootstrap
+
+As the [Cartographer](./features/cartographer/README.md) will likely be using the side USB port, I'm now suggesting that users download the bootstrap bundle, extract the archive, and upload the extracted folder through Fluidd by clicking on `{...}`, `+`, `Upload Folder`.
+<insert some pictures or more detail here>
+
+```
+sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh
+```
+
+## Donations
 
 While donations are definitely _not required_, they are appreciated.  I you'd like to donate you can do so [here](https://ko-fi.com/jamincollins).
 
-# Bootstrap
+## Features
 
-Given the difficulty of getting several files on to a stock K2 I'm suggesting user place this archive a USB thumb drive and plug it into the side of the K2.
-It'll automatically mount at `/mnt/exUDISK`.
+* [better root](./features/better-root/README.md) home directory
+* installs [Entware](https://github.com/Entware/Entware)
+* implements [SCREWS_TILT_CALCULATE](https://www.klipper3d.org/Manual_Level.html#adjusting-bed-leveling-screws-using-the-bed-probe)
+* updated versions of
+  * Fluidd, with support for the K2 camera
+  * [Moonraker](./features/moonraker/README.md)
+* several quality of life improvement macros
+  * [START_PRINT](./features/macros/start_print/README.md)
+  * [M191](./features/macros/m191/README.md)
+* [Cartographer](./features/cartographer/README.md) support
+* [Obico](./features/obico/README.md)
 
-You should be able to then run either installer:
-* `/mnt/exUDISK/k2-improvements/menu.sh`
-* `/mnt/exUDISK/k2-improvements/entware/menu.sh`
 
-
-DISCLAIMER: use at your own risk, not responsible for fires or broken dreams.  But you do get to keep both halves if something breaks.
-
-# Features
-* restores and implements SCREWS_TILT_CALCULATE
-* improved Bed Mesh, removes 9x9 limitation
-* native Fluidd webcam feed/stream
-* an M191 implementation
-* improved START_PRINT macro
+------------
 
 ## START_PRINT
 
 The improved START_PRINT macro adds:
+
 * support for the M191 macro through an optional **CHAMBER_TEMP** parameter
 * Z_TILT_ADJUST
 * final M190 call to ensure the bed is at desired temperature
 
 To leveraget the M191, you can pass the desired chamber temperature to `START_PRINT` by replacing this line in your slicer's **Start G-code** macro:
-```
+
+```gcode
 START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]
 ```
+
 with this one:
-```
+
+```gcode
 START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single] CHAMBER_TEMP=[overall_chamber_temperature]
 ```
 
@@ -43,27 +70,13 @@ This macro can be used in a couple different ways.
 
 Some slicers (perhaps most) have a setting to generate M141 and M191 temperature control commands.  For Creality Print and Orca Slicer this setting is among the filament setttings near the **Chamber temperature** setting.
 
-## Fluidd / K2 Webcam
+## Extras
 
-Open Settings -> Cameras -> ADD CAMERA
-
-* Stream type: **WebRTC (Creality K2 Plus)**
-* Camera Url Stream: **http://<printer_name/ip>:8000**
-
-# Entware
-
-The addition of Entware opens up a number of possibilites including:
-
-* restoration of classic MJPG camera feeds
-* Obico
-
-# Extras
-
-## Bed Leveling
+### Bed Leveling
 
 Sadly, many of the K2 beds resemble a taco or valley.  In the [bed_leveling](bed_leveling) folder you will find a python based script and short writeup on how to apply aluminium tape to shim the bed.
 
-# Credits
+## Credits
 
 * [@Guilouz](https://github.com/Guilouz) - standing on the shoulders of giants
 * [@stranula](https://github.com/stranula)
