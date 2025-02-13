@@ -24,7 +24,7 @@ fi
 upgrade_pip() {
     echo "I: upgrading klippy-env pip version"
     wget https://bootstrap.pypa.io/get-pip.py
-    ./klippy-env/bin/python3 ./get-pip.py
+    ~/klippy-env/bin/python3 ./get-pip.py
     rm -f ./get-pip.py
 }
 upgrade_pip
@@ -36,7 +36,7 @@ fi
 
 # install requirements
 echo "I: installing cartographer requirements"
-./klippy-env/bin/pip \
+~/klippy-env/bin/pip \
     install \
     --upgrade \
     --requirement cartographer-klipper/requirements.txt
