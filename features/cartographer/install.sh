@@ -42,7 +42,7 @@ echo "I: installing cartographer requirements"
     --requirement cartographer-klipper/requirements.txt
 
 # fix the klippy-env libraries
-python3 ${SCRIPT_DIR}/../../scripts/fix_venv.py klippy-env
+python3 ${SCRIPT_DIR}/../../scripts/fix_venv.py ~/klippy-env
 
 # drop missing libraries in place
 echo "I: installing cartographer libraries"
