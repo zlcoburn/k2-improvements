@@ -3,6 +3,8 @@ set -e
 
 SCRIPT_DIR=$(readlink -f $(dirname ${0}))
 
+cd ${HOME}
+
 export TMPDIR=/mnt/UDISK/tmp
 
 if [ ! -d cartographer-klipper/.git ]; then
