@@ -29,7 +29,7 @@ def create_camera(ip_address):
     }
 
     # Prepare the connection
-    conn = http.client.HTTPConnection("localhost", 7125)
+    conn = http.client.HTTPConnection(ip_address, 7125)
     headers = {"Content-Type": "application/json"}
 
     try:
