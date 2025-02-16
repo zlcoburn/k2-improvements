@@ -82,7 +82,7 @@ echo 'export PATH="/opt/bin:/opt/sbin:$PATH"' > /etc/profile.d/entware.sh
 
 echo -e "Info: Adding startup script..."
 
-echo -e '#!/bin/sh\n/opt/etc/init.d/rc.unslung "$1"' > /etc/init.d/unslung
+cp unslung.init /etc/init.d/unslung
 chmod 755 /etc/init.d/unslung
 ln -sf /etc/init.d/unslung /etc/rc.d/S99unslung
 ln -sf /etc/init.d/unslung /etc/rc.d/K01unslung
