@@ -36,9 +36,6 @@ case ${ACTION} in
         rm -f ~/klipper/klippy/extras/scanner.py*
         rm -f ~/klipper/klippy/extras/cartographer.py*
         rm -f ~/klipper/klippy/extras/idm.py*
-#        cd ~/klipper/klippy/extras
-#        patch -R < "${PATCH}"
-#        rm -f homing.pyc
         sed -E \
             -i \
             -e 's/#(.*prtouch.*)/\1/' \

@@ -16,7 +16,7 @@ if [ ! -d cartographer-klipper/.git ]; then
 fi
 
 if [ -L klippy-env ]; then
-    echo "I: moving klippy-env to /mnt/UDISK"
+    echo "I: moving klippy-env to /mnt/UDISK/root"
     # move lippy-env to /mnt/UDISK
     rm -f klippy-env
     rsync -SHa /usr/share/klippy-env/ klippy-env/
@@ -58,10 +58,9 @@ echo "I: installing cartographer"
 mkdir -p /mnt/UDISK/bin
 ln -sf  ${SCRIPT_DIR}/usb_bridge /mnt/UDISK/bin/usb_bridge
 chmod +x /mnt/UDISK/bin/usb_bridge
+ln -s ${SCRIPT_DIR}/cartographer.sh /mnt/UDISK/bin/cartographer.sh
 ln -sf ${SCRIPT_DIR}/cartographer.init /etc/init.d/cartographer
-chmod +x /etc/init.d/cartographer
-/etc/init.d/cartographer enable
-/etc/init.d/cartographer start
+ln -sf ${SCRIPT_DIR}/cartographer.init /opt/etc/init.d/S50cartographer
 
 # install cartographer convenience scripts
 ln -sf ${SCRIPT_DIR}/cartographer.sh /mnt/UDISK/bin
