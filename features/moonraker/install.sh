@@ -28,23 +28,6 @@ progress() {
     echo "#### ${1}"
 }
 
-get_pip() {
-    if "$(fw_printenv --noheader version)" -ge '1.1.2.6'; then
-        progress "pip version new enough"
-    else
-        progress "upgrading pip ..."
-        opkg install curl
-        URL="https://bootstrap.pypa.io/get-pip.py"
-        SCRIPT_NAME=$(basename ${URL})
-        curl "${URL}" -o "${SCRIPT_NAME}"
-        /opt/bin/python3 "${SCRIPT_NAME}"
-        rm -f "${SCRIPT_NAME}"
-    fi
-}
-
-# recent firmware seems to have new enough pip already
-#get_pip
-
 install_virtualenv() {
     progress "Installing virtualenv ..."
     type -p virtualenv > /dev/null || pip install virtualenv
@@ -72,12 +55,14 @@ fetch_moonraker() {
     else
         git clone https://github.com/jamincollins/moonraker.git
     fi
+    # ensure we are on the k2 branch
+    git -C moonraker checkout k2
 }
 
 create_moonraker_venv() {
     progress "Creating mooonraker venv..."
     # python 3.9.12
-    test -d moonraker-env || virtualenv -p /usr/bin/python3 moonraker-env
+    test -d moonraker-env || virtualenv -p /usr/bin/python3 ~/moonraker-env
 
     ./moonraker-env/bin/pip \
         install \
@@ -89,46 +74,22 @@ create_moonraker_venv() {
         install \
         lmdb
 
-    python3 ${SCRIPT_DIR}/../../scripts/fix_venv.py moonraker-env
+    python3 ${SCRIPT_DIR}/../../scripts/fix_venv.py ~/moonraker-env
 }
 
 replace_moonraker() {
-    # capture existing config
-    if [ -f /usr/share/moonraker/moonraker.conf ]; then
-        mv /usr/share/moonraker/moonraker.conf \
-            /mnt/UDISK/printer_data/config/moonraker.conf
-    fi
     progress "Stopping legacy mooonraker ..."
     /etc/init.d/moonraker stop
 
-
     progress "Replacing legacy mooonraker with mainline ..."
-    # replace existing paths with symlinks
-    rm -fr /usr/share/moonraker
-    ln -sf ~/moonraker/moonraker /usr/share/moonraker
-
-    rm -fr /usr/share/moonraker-env
-    ln -sf ~/moonraker-env /usr/share/moonraker-env
 
     # update init script location for new config file location
+    rm -f /etc/rc.d/S*moonraker
     ln -sf ${SCRIPT_DIR}/moonraker.init /etc/init.d/moonraker
+    ln -sf ${SCRIPT_DIR}/moonraker.init /opt/etc/init.d/S56moonraker
 
-    # remove the deprecated derective
-    sed -Ei \
-        '/enable_inotify_warnings: False/d' \
-        /mnt/UDISK/printer_data/config/moonraker.conf
-
-    # turn on update manager
-    if ! grep -q '^\[update_manager\]' /mnt/UDISK/printer_data/config/moonraker.conf; then
-        cat >> /mnt/UDISK/printer_data/config/moonraker.conf <<-EOF
-
-[update_manager]
-refresh_interval: 168
-enable_auto_refresh: True
-# no real system updates other than Creality firmwares currently
-enable_system_updates: False
-EOF
-    fi
+    # full copy not symlink here
+    cp ${SCRIPT_DIR}/moonraker.conf /mnt/UDISK/printer_data/config/moonraker.conf
 
     progress "Starting mooonraker ..."
     /etc/init.d/moonraker start
