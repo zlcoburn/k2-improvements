@@ -11,11 +11,14 @@ start_service() {
     procd_set_param stdout 1
     procd_set_param stderr 1
     procd_set_param respawn 3600 5 5
-   	procd_set_param pidfile /var/run/cartographer.pid
+    procd_set_param pidfile /var/run/cartographer.pid
     procd_close_instance
 }
 
 reload_service() {
     stop
+    sleep 2
     start
+    # restarting the bridge will upset klipper, force restart
+    /etc/init.d/klipper restart
 }

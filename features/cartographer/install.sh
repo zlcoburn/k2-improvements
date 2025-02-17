@@ -61,6 +61,7 @@ chmod +x /mnt/UDISK/bin/usb_bridge
 ln -s ${SCRIPT_DIR}/cartographer.sh /mnt/UDISK/bin/cartographer.sh
 ln -sf ${SCRIPT_DIR}/cartographer.init /etc/init.d/cartographer
 ln -sf ${SCRIPT_DIR}/cartographer.init /opt/etc/init.d/S50cartographer
+/etc/init.d/cartographer start
 
 # install cartographer convenience scripts
 ln -sf ${SCRIPT_DIR}/cartographer.sh /mnt/UDISK/bin
