@@ -1,3 +1,5 @@
+# Key Based Authentication
+
 ## Install
 
 Download and install `git`.  Either the **Standalone Installer** or **Portable**:
@@ -50,3 +52,11 @@ ssh root@k2
 ```
 
 If you put a passphrase on your key at generation you will likely be asked to enter it each time you attempt to use the key.
+
+## Verification
+
+Now from your system (git bash) try to run this:
+```
+ssh -o PreferredAuthentications=password root@k2
+```
+This tries to `ssh` with only password authentication.  If the installation succeeded without error, the above should not work
