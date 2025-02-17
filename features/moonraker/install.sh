@@ -95,8 +95,33 @@ replace_moonraker() {
     /etc/init.d/moonraker start
 }
 
+modify_moonraker_asvc() {
+    progress "Modifying moonraker.asvc ..."
+    MOONRAKER_ASVC=/mnt/UDISK/printer_data/moonraker.asvc
+    for SERVICE in webrtc cartographer klipper; do
+        if ! grep -qE "${SERVICE}" ${MOONRAKER_ASVC}; then
+            echo "${SERVICE}" >> ${MOONRAKER_ASVC}
+        fi
+    done
+}
+
+wait_for_moonraker() {
+    progress "Waiting for moonraker to start ..."
+    count=0
+    while ! nc -z 127.0.0.1 7125; do
+        if [ $count -gt 60 ]; then
+            echo "E: moonraker failed to start!"
+            exit 1
+        fi
+        count=$((count + 1))
+        sleep 1
+    done
+}
+
 install_virtualenv
 remove_legacy_symlinks
 fetch_moonraker
 create_moonraker_venv
+modify_moonraker_asvc
 replace_moonraker
+wait_for_moonraker
