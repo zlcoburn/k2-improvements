@@ -31,6 +31,9 @@ alias grep='grep --color=always'
 EOF
 }
 
+if grep -qE 'root.*UDISK' /etc/passwd; then
+    exit 0
+fi
 move_homedir
 link_up
 #aliases
