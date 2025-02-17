@@ -26,7 +26,7 @@ def add_include(config_path, include_path, commented=False):
         return
 
     update_needed = True
-    comment_block_found = False
+    insert_before = False
 
     with open(config_path, 'r') as handle:
         contents = handle.readlines()
@@ -36,11 +36,14 @@ def add_include(config_path, include_path, commented=False):
                 update_needed = False
                 break
             if line.startswith('#*#'):
-                comment_block_found = True
+                insert_before = True
+                break
+            if line.startswith('[include overrides.cfg]'):
+                insert_before = True
                 break
 
     if update_needed:
-        if comment_block_found:
+        if insert_before:
             contents.insert(contents.index(line), target + '\n')
         else:
             contents.append(target + '\n')
