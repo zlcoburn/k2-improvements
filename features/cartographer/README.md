@@ -67,6 +67,8 @@ The **TL;DR** of _kernel_ vs _user space_ is that our solution is a _bit hacky_ 
 
 For the current mount, you'll need a [Right Angle Cartographer](https://cartographer3d.com/products/cartographer-probe-v3-with-adxl345-right-angle-can-usb)
 
+There are also [color options](https://cartographer3d.com/products/cartographer-v3-colour-edition), but be _sure_ you get the **Right Angle** variant.
+
 ### M2.6x20mm screws/bolts
 
 Be sure to select the right size [**M2.6x20mm**](https://www.aliexpress.us/item/3256803144062450.html).
