@@ -3,9 +3,11 @@
 ## Install
 
 Download and install `git`.  Either the **Standalone Installer** or **Portable**:
-* https://git-scm.com/downloads
+
+* [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
 Alternatively you can use a one of the package management tools such as:
+
 * [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/winget)
 * [chocolatey](https://chocolatey.org/install)
 
@@ -17,7 +19,7 @@ Start **Git Bash**
 
 Generate a key:
 
-```
+```sh
 ssh-keygen -t ed25519
 ```
 
@@ -33,7 +35,7 @@ Confirm your previous choice by either leaving it blank again or re-entering the
 
 In order to use the key for ssh authentication we need to put the _public_ portion fo the key onto the K2.  Replace _k2_ in the following with the printer's hostname or IP address.
 
-```
+```sh
 ssh-copy-id root@k2
 ```
 
@@ -47,7 +49,7 @@ At this point you'll be asked for the root users password, enter it. Note: you w
 
 At this point you should be able to authenticate to the K2 with your ssh key rather than a password.  Replace _k2_ in the following with the printer's hostname or IP address.
 
-```
+```sh
 ssh root@k2
 ```
 
@@ -56,7 +58,9 @@ If you put a passphrase on your key at generation you will likely be asked to en
 ## Verification
 
 Now from your system (git bash) try to run this:
-```
+
+```sh
 ssh -o PreferredAuthentications=password root@k2
 ```
+
 This tries to `ssh` with only password authentication.  If the installation succeeded without error, the above should not work

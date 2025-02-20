@@ -30,7 +30,7 @@ Given that detailed probing takes so long, it became a common practice to perfor
 ## The Solution
 
 The Cartographer probe does not suffer from any of the above issues.
-
+<!-- markdownlint-disable MD024 -->
 ### Accuracy
 
 The Cartographer probe is widely used with no signs of accuracy issues being reported
@@ -42,13 +42,16 @@ The Cartographer probe uses more traditional Klipper settings and allows you (th
 ### Speed
 
 With the Cartographer a two pass (yes, two pass):
+
 * 9x9 mesh takes: ~40 seconds
 * 25x25 mesh takes: ~2 minutes
 * 100x100[1] mesh takes: ~7 minutes
 
 [1] - we don't advise this as it takes a long time for the klipper process to start on the K2, ~1 minute startup
 
-# Sounds too good to be true
+<!-- markdownlint-enable MD024 -->
+
+## Sounds too good to be true
 
 You're right, it does sound too good to be true.
 
@@ -58,16 +61,20 @@ The K2 doesn't (as of this writing) provide the necessary kernel module to nativ
 
 The **TL;DR** of _kernel_ vs _user space_ is that our solution is a _bit hacky_ and _slower_ than it should be.
 
-# What do I need?
+## What do I need?
 
-## Right Angle Cartographer
+### Right Angle Cartographer
 
 For the current mount, you'll need a [Right Angle Cartographer](https://cartographer3d.com/products/cartographer-probe-v3-with-adxl345-right-angle-can-usb)
 
-## M2.6x20mm screws/bolts
+### M2.6x20mm screws/bolts
 
 Be sure to select the right size [**M2.6x20mm**](https://www.aliexpress.us/item/3256803144062450.html).
 
-## Heat inserts
+### Heat inserts
 
 The printed mount requires 2x [M3x5x4 heat inserts](https://www.amazon.com/Threaded-Inserts-Soldering-Printed-Materials/dp/B0D7M3LJDL)
+
+## How
+
+See the [setup](./SETUP.md) instructions.

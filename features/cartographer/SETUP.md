@@ -4,9 +4,11 @@
 
 The Cartographer **MUST** be flashed with the special K1 firmware.
 
+The instructions and script for doing so can be found [here](./firmware/README.md)
+
 ## Calibration
 
-This is much the same as the process detail [here](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration#initial-calibration), with only slight adjustments for the oddities of the K2.
+This is much the same as the process detailed [here](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration#initial-calibration), with only slight adjustments for the oddities of the K2.
 
 Issue the following commands in your Fluidd console:
 
