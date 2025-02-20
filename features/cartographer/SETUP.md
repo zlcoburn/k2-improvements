@@ -6,6 +6,12 @@ The Cartographer **MUST** be flashed with the special K1 firmware.
 
 The instructions and script for doing so can be found [here](./firmware/README.md)
 
+## Print Mount and spacers for K2
+
+The mount and spacers required for the cartographer installation have been provided by stranula, and recommended to be printed at a minimum in PETG, but ABS, ASA or any other high glass transition temp filament is recommended.
+
+The files are provided in the desired printing oritentation, use a setting that you are comfortable with for functional parts with reasonable tolerances
+
 ## Calibration
 
 This is much the same as the process detailed [here](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration#initial-calibration), with only slight adjustments for the oddities of the K2.

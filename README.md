@@ -10,25 +10,27 @@ This is the working state of a complete revamp of the repository, almost everyth
 
 ## Installers
 
-A unified installation menu is _planned_.  For now each feature can be found under the [features](./features/) directory.  A `README.md` and installation script `install.sh` is provided for each option.
+A unified installation menu is _planned_.  For now each feature can be found under the [features](./features/) directory.  A `README.md` and installation script `install.sh` are provided for each option.
 
 The unified installer will understand inter option dependencies and ensure they are met.
 
+For now, there are two default installations:
+
+* `gimme-the-jamin.sh`
+* `no-carto.sh`
+
+They both install the same set of features (those that I use).  The only difference is whether or not the cartographer bits are installed.
+
+You are still welcome to hand pick which features you want to install.
+
 ## Bootstrap
 
-As the [Cartographer](./features/cartographer/README.md) will likely be using the side USB port, I'm now suggesting that users download the bootstrap bundle, extract the archive, and upload the extracted folder through Fluidd by clicking on
-
-* `{...}`
-* `+`
-* `Upload Folder`
-
-<insert some pictures or more detail here>
-
-Once uploaded, `ssh` into the K2 and run the following:
-
-```sh
-sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh
-```
+1. Enable root access on the K2 Plus by going to Settings, General tab and root. Take note of the password.
+1. Download bootstrap (link here) and extract the folder.
+1. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
+1. Upload the extracted bootstrap folder by going to Settings **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
+1. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
+1. Once connected, paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter
 
 ## Donations
 
