@@ -12,27 +12,27 @@ This is much the same as the process detailed [here](https://docs.cartographer3d
 
 Issue the following commands in your Fluidd console:
 
-```gcode
+```raw
 PROBE_SWITCH MODE=touch
 SAVE_CONFIG
 ```
 
 Once Klipper restarts, enter the following commands.  The `G28 Z` will give an error **No model loaded**, but it will also get the toolhead and bed near where we need them.
 
-```gcode
+```raw
 G28 X Y
 G28 Z
 ```
 
 At this point you can query your endstops:
 
-```gcode
+```raw
 QUERY_ENDSTOPS
 ```
 
 You will likely see something like the following:
 
-```gcode
+```raw
 x:open y:open z:TRIGGERED
 ```
 
@@ -40,53 +40,53 @@ This is normal and expected.
 
 The following is needed on the K2 to allow us to walk the bed to the toolhead.
 
-```gcode
+```raw
 SET_KINEMATIC_POSITION Z=200
 ```
 
 Now we begin the probe calibration process:
 
-```gcode
+```raw
 CARTOGRAPHER_CALIBRATE METHOD=manual
 ```
 
 Use the Fluidd UI to raise the bed step by step toward the nozzle.  Use a piece of paper  or a feeler gauge to measure the offset. Once finished remove the paper/gauge and accept the position.
 
-```gcode
+```raw
 ACCEPT
 ```
 
-```gcode
+```raw
 SAVE_CONFIG
 ```
 
 Wait for Klipper to restart.  Then, home the printer.
 
-```gcode
+```raw
 G28
 ```
 
 Test the accuracy.  This will only use the scanning coil, it will not touch the bed.
 
-```gcode
+```raw
 PROBE_ACCURACY
 ```
 
 Now to further tune the Cartographer we need to measure the backlash of the Z kinematics:
 
-```gcode
+```raw
 CARTOGRAPHER_ESTIMATE_BACKLASH
 ```
 
 In output you're looking for the "delta" value. For example, the following shows my backlash as `0.00070`.
 
-```gcode
+```raw
 Median distance moving up 1.99701, down 1.99772, delta 0.00070 over 20 samples
 ```
 
 Take your value, open the `custom/cartographer.cfg` and add the value inside the `[scanner]` section like so:
 
-```gcode
+```raw
 [scanner]
 backlash_comp: 0.00070
 ```
@@ -95,7 +95,7 @@ backlash_comp: 0.00070
 
 Home and level everything.
 
-```gcode
+```raw
 G28
 Z_TILT_ADJUST
 G28 Z
@@ -107,7 +107,7 @@ Initiate a threshold scan. This will determine your threshold for cartographer. 
 
 Its okay if at first it doesnt touch the bed at all, this is completely normal. It will eventually start touching.
 
-```gcode
+```raw
 CARTOGRAPHER_THRESHOLD_SCAN
 ```
 
@@ -115,12 +115,12 @@ This _will_ take some time as several different thresholds are tested.  On the K
 
 Now do a touch calibration with the new threshold.
 
-```gcode
+```raw
 CARTOGRAPHER_CALIBRATE
 ```
 
 If everything went correctly the touch test should pass and you can now finish by saving these variables to your config.
 
-```gcode
+```raw
 SAVE_CONFIG
 ```

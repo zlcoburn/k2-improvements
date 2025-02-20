@@ -6,7 +6,7 @@ This will sound strange (since I've included it as an option), but I don't recom
 
 ## Calibration
 
-```gcode
+```raw
 G28
 Z_TILT_ADJUST
 AXIS_TWIST_COMPENSATION_CALIBRATE AUTO=TRUE SAMPLE_COUNT=10
