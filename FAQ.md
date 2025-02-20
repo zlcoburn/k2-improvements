@@ -1,5 +1,9 @@
 # FAQ
 
+## I've installed the Fluidd update, but the camera doesn't show up
+
+A: Have you tried using Firefox?  As far as we can tell this is due to an odd interaction between Creality's WebRTC implementation and Chrome based browsers.
+
 ## My bed crashes into the bottom! What did you do?
 
 A: This has nothing to do with the K2 improvements.  Sadly, many of us have seen this with the stock 1.1.2.x series firmware.
