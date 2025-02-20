@@ -17,10 +17,15 @@ PROBE_SWITCH MODE=touch
 SAVE_CONFIG
 ```
 
-Once Klipper restarts, enter the following commands.  The `G28 Z` will give an error **No model loaded**, but it will also get the toolhead and bed near where we need them.
+Once Klipper restarts, enter the following command.
 
 ```raw
 G28 X Y
+```
+
+The following `G28 Z` will lower the bed to the bottom of the printer, raise it and then give an error **No model loaded**, but it will also get the toolhead and bed near where we need them.
+
+```raw
 G28 Z
 ```
 
