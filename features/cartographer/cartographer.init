@@ -1,4 +1,4 @@
-#!/bin/sh /etc/rc.common
+#!/bin/ash /etc/rc.common
 
 START=50
 USE_PROCD=1
