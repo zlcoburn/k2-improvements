@@ -8,9 +8,9 @@ The instructions and script for doing so can be found [here](./firmware/README.m
 
 ## Print Mount and spacers for K2
 
-The mount and spacers required for the cartographer installation have been provided by stranula, and recommended to be printed at a minimum in PETG, but ABS, ASA or any other high glass transition temp filament is recommended.
+The mount and spacers required for the cartographer installation have been provided by stranula, [here](https://www.printables.com/model/1198696-k2-plus-cartographer-mount-shroud-and-spacers). We recommend printing these at a minimum in PETG, but ABS, ASA or any other high glass transition temp filament is preferred.
 
-The files are provided in the desired printing oritentation, use a setting that you are comfortable with for functional parts with reasonable tolerances
+The files are provided in the desired printing orientation, use a setting that you are comfortable with for functional parts with reasonable tolerances
 
 ## Calibration
 
