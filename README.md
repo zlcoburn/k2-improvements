@@ -4,10 +4,6 @@
 
 Use at your own risk, I'm not responsible for fires or broken dreams.  But you do get to keep both halves if something breaks.
 
-## REVAMP
-
-This is the working state of a complete revamp of the repository, almost everything will be changed.
-
 ## Installers
 
 A unified installation menu is _planned_.  For now each feature can be found under the [features](./features/) directory.  A `README.md` and installation script `install.sh` are provided for each option.
