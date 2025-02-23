@@ -4,6 +4,19 @@
 
 Use at your own risk, I'm not responsible for fires or broken dreams.  But you do get to keep both halves if something breaks.
 
+## Start Here at Bootstrap
+The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs.
+
+1. Enable root access on the K2 Plus by going to Settings, General tab and root on the physical screen. Take note of the password.
+2. Download bootstrap https://github.com/jamincollins/k2-improvements/releases/tag/bootstrap and extract the folder.
+3. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
+4. Unzip the downloaded bootstrap folder and upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
+    ![image](https://github.com/user-attachments/assets/3d242efc-4cf8-412d-b4b0-59507720f5ad)
+5. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
+6. Recommend performing a wipe prior to install due to potential conflicts with previous mods enter the command 'echo "all" | /usr/bin/nc -U /var/run/wipe.sock' into your terminal.
+7. If you execute a wipe, you will need to go through setup on the K2 screen and complete all the way through creality cloud connection. This will give you the wifi/network connection that you will need and connect appropriately to creality cloud. Stop at the calibration, you can do this later.
+8. To start the boostrap install paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter.
+
 ## Installers
 
 A unified installation menu is _planned_.  For now each feature can be found under the [features](./features/) directory.  A `README.md` and installation script `install.sh` are provided for each option.
@@ -12,21 +25,17 @@ The unified installer will understand inter option dependencies and ensure they 
 
 For now, there are two default installations:
 
-* `gimme-the-jamin.sh`
-* `no-carto.sh`
+* `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions here https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md**
 
-They both install the same set of features (those that I use).  The only difference is whether or not the cartographer bits are installed.
+To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
+
+* `no-carto.sh` - Use this if you aren't going to use a carto, or don't have your carto yet.
+
+To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/no-carto.sh`
+
+They both install the same set of features (those that I use).  The only difference is whether or not the cartographer bits are installed. If you start with no-carto.sh and later get a carto, you can then run the gimme-the-jamin.sh script and it will install all of the necessary carto items appropriately.
 
 You are still welcome to hand pick which features you want to install.
-
-## Bootstrap
-
-1. Enable root access on the K2 Plus by going to Settings, General tab and root. Take note of the password.
-1. Download bootstrap (link here) and extract the folder.
-1. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
-1. Upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
-1. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
-1. Once connected, paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter
 
 ## Donations
 
