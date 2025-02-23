@@ -22,7 +22,7 @@ The Windows installation is a modified version of the above provided by bigadz a
 1. Install [Ubuntu WSL2](https://documentation.ubuntu.com/wsl/en/latest/howto/install-ubuntu-wsl2/)
 2. Install [usbipd-win msi installer](https://github.com/dorssel/usbipd-win/releases)
 3. Connect the Cartographer via the supplied USB cable
-4. Open Ubuntu WSL and download the flash script by entering
+4. Open Ubuntu WSL (as Administrator) and download the flash script by entering
 
     ```bash
     wget https://raw.githubusercontent.com/jamincollins/k2-improvements/refs/heads/revamp/features/cartographer/firmware/WSLFlash.sh
