@@ -11,7 +11,7 @@ The linux flash script is provided by JaminCollins and is suitable to run on Deb
     wget https://raw.githubusercontent.com/jamincollins/k2-improvements/refs/heads/features/cartographer/firmware/flash.sh
     ```
 
-3. Run script by entering `bash ./go.sh` in the terminal and hitting enter
+3. Run script by entering `bash ./flash.sh` in the terminal and hitting enter
 
 The script should automatically do everything and leave you with a flashed Cartographer.
 
