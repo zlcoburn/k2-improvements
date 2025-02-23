@@ -24,7 +24,7 @@ You are still welcome to hand pick which features you want to install.
 1. Enable root access on the K2 Plus by going to Settings, General tab and root. Take note of the password.
 1. Download bootstrap (link here) and extract the folder.
 1. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
-1. Upload the extracted bootstrap folder by going to Settings **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
+1. Upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
 1. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
 1. Once connected, paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter
 
