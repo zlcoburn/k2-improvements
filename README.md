@@ -25,7 +25,7 @@ The unified installer will understand inter option dependencies and ensure they 
 
 For now, there are two default installations:
 
-* `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO**
+* `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions here https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md**
 
 To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
 
