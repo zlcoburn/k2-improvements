@@ -1,5 +1,9 @@
 # FAQ
 
+## Can I still use the auto calibrate features?
+
+A: Unfortunately, at this time they are not supported. No.
+
 ## I've installed the Fluidd update, but the camera doesn't show up
 
 A: Have you tried using Firefox?  As far as we can tell this is due to an odd interaction between Creality's WebRTC implementation and Chrome based browsers.
