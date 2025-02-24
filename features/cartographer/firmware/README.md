@@ -1,5 +1,15 @@
 # Cartographer Firmware
 
+## NOTE
+
+It is best if you only have one Cartographer (or similar USB 3d printer accessory) attached to the system you are using for flashing.  As the VID:PID combination for the Cartographer is not unique, as indicated from this `lsusb` output:
+
+```raw
+Bus 001 Device 017: ID 1d50:614e OpenMoko, Inc. stm32f446xx
+Bus 001 Device 016: ID 1d50:614e OpenMoko, Inc. stm32g0b1xx
+Bus 001 Device 015: ID 1d50:614e OpenMoko, Inc.
+```
+
 ## Linux
 
 The linux flash script is provided by JaminCollins and is suitable to run on Debian and Ubuntu OS's, this can be a bootable live usb if necessary.
