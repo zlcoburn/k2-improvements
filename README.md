@@ -79,6 +79,7 @@ Sadly, many of the K2 beds resemble a taco or valley.  In the [bed_leveling](bed
 * Fluidd - [https://github.com/fluidd-core/fluidd](https://github.com/fluidd-core/fluidd)
 * Entware - [https://github.com/Entware/Entware](https://github.com/Entware/Entware)
 * Obico - [https://www.obico.io/](https://www.obico.io/)
+* SimplyPrint - [https://simplyprint.io/](https://simplyprint.io/)
 
 ## FAQ
 
