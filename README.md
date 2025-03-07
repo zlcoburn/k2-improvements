@@ -10,7 +10,7 @@ As a _heads up_ these improvements are not compatible with Creality's _auto-cali
 
 ## Start Here at Bootstrap
 
-The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs.
+The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs. Additionally, root is enabled by default with the password: 'creality_2024'. At some point, we recommend running command 'passwd' in the terminal to change the defualt password to something secure. 
 
 1. Enable root access on the K2 Plus by going to Settings, General tab and root on the physical screen. Take note of the password.
 2. Download bootstrap [https://github.com/jamincollins/k2-improvements/releases/tag/bootstrap](https://github.com/jamincollins/k2-improvements/releases/tag/bootstrap) and extract the folder.
@@ -21,6 +21,7 @@ The Bootstrap is a requirement for the improvements to install properly, so this
 6. Recommend performing a wipe prior to install due to potential conflicts with previous mods enter the command 'echo "all" | /usr/bin/nc -U /var/run/wipe.sock' into your terminal.
 7. If you execute a wipe, you will need to go through setup on the K2 screen and complete all the way through creality cloud connection. This will give you the wifi/network connection that you will need and connect appropriately to creality cloud. Stop at the calibration, you can do this later.
 8. To start the boostrap install paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter.
+9. Once the setup completes, it will log you out of your terminal and you will need to log back in.
 
 ## Installers
 
