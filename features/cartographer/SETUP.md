@@ -16,6 +16,8 @@ The files are provided in the desired printing orientation, use a setting that y
 
 This is much the same as the process detailed [here](https://docs.cartographer3d.com/cartographer-probe/installation-and-setup/installation/calibration#initial-calibration), with only slight adjustments for the oddities of the K2.
 
+***Note during this process you will sometimes experience homing anomolies, clunking sound by the bed (quick realeasing of z motors), or firmware crashes. While this seems concerning in the moment, it is "normal" and the clunking and random firmware crashes are stabalized after the calibration is completed. When you experience these anamolies, just start from the command again prior to crash. If necessary it is ok to reboot your machine. 
+
 Issue the following commands in your Fluidd console:
 
 ```raw
@@ -122,7 +124,7 @@ Its okay if at first it doesnt touch the bed at all, this is completely normal. 
 CARTOGRAPHER_THRESHOLD_SCAN
 ```
 
-This _will_ take some time as several different thresholds are tested.  On the K2, we've found that around 1500 seems to be the magic point.
+This _will_ take some time as several different thresholds are tested.  On the K2, we've found that around 1500 seems to be the magic point. If your machine settles on something other that 1500 you can try to run the command CARTOGROPHER_THRESHOLD_SCAN MIN=1500 and it will start from 1500 and run for a bit and should settle on 1500.
 
 Now do a touch calibration with the new threshold.
 
@@ -135,3 +137,4 @@ If everything went correctly the touch test should pass and you can now finish b
 ```raw
 SAVE_CONFIG
 ```
+We recommend a full poweroff reboot because a lot of changes were made to you K2. This will ensure operational stability.
