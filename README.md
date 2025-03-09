@@ -29,15 +29,17 @@ A unified installation menu is _planned_.  For now each feature can be found und
 
 The unified installer will understand inter option dependencies and ensure they are met.
 
-For now, there are two default installations:
+For now, there are two default installations:   **Note either option will take some time and seem to hang at times. Be patient as it is moving lots of files and creating venvs for klipper and moonraker full installs
 
-* `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md)**
+* Option 1: `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/firmware/README.md)
 
-To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
+    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh` 
 
-* `no-carto.sh` - Use this if you aren't going to use a carto, or don't have your carto yet.
+    After install you will need to calibrate the carto by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md)**
 
-To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/no-carto.sh`
+* Option 2: `no-carto.sh` - Use this if you aren't going to use a carto, or don't have your carto yet.
+
+    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/no-carto.sh`
 
 They both install the same set of features (those that I use).  The only difference is whether or not the cartographer bits are installed. If you start with no-carto.sh and later get a carto, you can then run the gimme-the-jamin.sh script and it will install all of the necessary carto items appropriately.
 
