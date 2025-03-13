@@ -8,9 +8,11 @@ move_homedir() {
             mkdir /mnt/UDISK/root
         fi
         rsync --remove-source-files -a /root/ /mnt/UDISK/root/
-        rm -fr /root/*
+        # just remove any overlays for the original root location
+        rm -fr /overlay/upper/root/*
         # change root homedir
         sed -i 's,/root,/mnt/UDISK/root,' /etc/passwd
+        sync
     fi
 }
 
