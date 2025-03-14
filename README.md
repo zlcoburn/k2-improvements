@@ -10,10 +10,10 @@ As a _heads up_ these improvements are not compatible with Creality's _auto-cali
 
 ## Start Here at Bootstrap
 
-The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs. Additionally, root is enabled by default with the password: 'creality_2024'. At some point, we recommend running command 'passwd' in the terminal to change the defualt password to something secure. 
+The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs. Additionally, root is enabled by default with the password: 'creality_2024'. At some point, we recommend running command 'passwd' in the terminal to change the defualt password to something secure.
 
 1. Enable root access on the K2 Plus by going to Settings, General tab and root on the physical screen. Take note of the password.
-2. Download bootstrap [https://github.com/jamincollins/k2-improvements/releases/tag/bootstrap](https://github.com/jamincollins/k2-improvements/releases/tag/bootstrap) and extract the folder.
+2. Download the latest bootstrap release from [https://github.com/jamincollins/k2-improvements/releases](https://github.com/jamincollins/k2-improvements/releases) and extract the folder.
 3. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
 4. Unzip the downloaded bootstrap folder and upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
     ![image](https://github.com/user-attachments/assets/3d242efc-4cf8-412d-b4b0-59507720f5ad)
@@ -33,7 +33,7 @@ For now, there are two default installations:   **Note either option will take s
 
 * Option 1: `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/firmware/README.md)
 
-    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh` 
+    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
 
     After install you will need to calibrate the carto by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md)**
 
