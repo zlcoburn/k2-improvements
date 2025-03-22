@@ -12,16 +12,21 @@ As a _heads up_ these improvements are not compatible with Creality's _auto-cali
 
 The Bootstrap is a requirement for the improvements to install properly, so this must be accomplished first. Of note, it will install entware tools necessary to accomplish the installs. Additionally, root is enabled by default with the password: 'creality_2024'. At some point, we recommend running command 'passwd' in the terminal to change the defualt password to something secure.
 
+It is recommend to perform a factory reset prior to install to avoid potential conflicts with previous modifications.  A factory reset can be achieved with the following command in a terminal on the K2:
+
+```raw
+echo "all" | /usr/bin/nc -U /var/run/wipe.sock
+```
+
 1. Enable root access on the K2 Plus by going to Settings, General tab and root on the physical screen. Take note of the password.
-2. Download the latest bootstrap release from [https://github.com/jamincollins/k2-improvements/releases](https://github.com/jamincollins/k2-improvements/releases) and extract the folder.
-3. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
-4. Unzip the downloaded bootstrap folder and upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
+1. Download the latest bootstrap release from [https://github.com/jamincollins/k2-improvements/releases](https://github.com/jamincollins/k2-improvements/releases) and extract the folder.
+1. To install the bootstrap, connect to your K2 Plus's Fluid interface via browser **http://PrinterIP:4408**
+1. Unzip the downloaded bootstrap folder and upload the extracted bootstrap folder by going to Configuration **{...}**, **+**, **Upload Folder**, and selecting the extracted bootstrap folder.
     ![image](https://github.com/user-attachments/assets/3d242efc-4cf8-412d-b4b0-59507720f5ad)
-5. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
-6. Recommend performing a wipe prior to install due to potential conflicts with previous mods enter the command 'echo "all" | /usr/bin/nc -U /var/run/wipe.sock' into your terminal.
-7. If you execute a wipe, you will need to go through setup on the K2 screen and complete all the way through creality cloud connection. This will give you the wifi/network connection that you will need and connect appropriately to creality cloud. Stop at the calibration, you can do this later.
-8. To start the boostrap install paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter.
-9. Once the setup completes, it will log you out of your terminal and you will need to log back in.
+1. SSH to the K2 Plus using any terminal tool (e.g. PuTTy) using the printers ip adress, port 22, user "root" and the password noted in step 1.
+1. If you execute a wipe, you will need to go through setup on the K2 screen and complete all the way through creality cloud connection. This will give you the wifi/network connection that you will need and connect appropriately to creality cloud. Stop at the calibration, you can do this later.
+1. To start the boostrap install paste into the terminal `sh /mnt/UDISK/printer_data/config/bootstrap/bootstrap.sh` and hit enter.
+1. Once the setup completes, it will log you out of your terminal and you will need to log back in.
 
 ## Installers
 
@@ -31,15 +36,15 @@ The unified installer will understand inter option dependencies and ensure they 
 
 For now, there are two default installations:   **Note either option will take some time and seem to hang at times. Be patient as it is moving lots of files and creating venvs for klipper and moonraker full installs
 
-* Option 1: `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/firmware/README.md)
+* Option 1: `gimme-the-jamin.sh` - Used to install carto **NOTE MUST HAVE CARTO FLASHED AND PLUGGED IN AND READY TO GO** by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/firmware/README.md) first.
 
-    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
+    To run, use the terminal command `sh /mnt/UDISK/root/k2-improvements/gimme-the-jamin.sh`
 
-    After install you will need to calibrate the carto by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md)**
+    After install you will need to calibrate the carto by following instructions [here](https://github.com/jamincollins/k2-improvements/blob/main/features/cartographer/SETUP.md)
 
 * Option 2: `no-carto.sh` - Use this if you aren't going to use a carto, or don't have your carto yet.
 
-    To run use the terminal command `sh /mnt/UDISK/root/k2-improvements/no-carto.sh`
+    To run, use the terminal command `sh /mnt/UDISK/root/k2-improvements/no-carto.sh`
 
 They both install the same set of features (those that I use).  The only difference is whether or not the cartographer bits are installed. If you start with no-carto.sh and later get a carto, you can then run the gimme-the-jamin.sh script and it will install all of the necessary carto items appropriately.
 
