@@ -77,6 +77,13 @@ create_moonraker_venv() {
     python3 ${SCRIPT_DIR}/../../scripts/fix_venv.py ~/moonraker-env
 }
 
+install_libs() {
+    progress "Installing mooonraker libs ..."
+    for LIB in ${SCRIPT_DIR}/libs/*.so*; do
+        ln -sf ${LIB} /lib/
+    done
+}
+
 replace_moonraker() {
     progress "Stopping legacy mooonraker ..."
     /etc/init.d/moonraker stop
@@ -122,6 +129,7 @@ install_virtualenv
 remove_legacy_symlinks
 fetch_moonraker
 create_moonraker_venv
+install_libs
 modify_moonraker_asvc
 replace_moonraker
 wait_for_moonraker
